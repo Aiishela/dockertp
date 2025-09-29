@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>README.en.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="lets-containerize-the-wordsmith-project">Let's containerize the wordsmith project!</h1>
+<p>The wordsmith project is split into 3 parts:</p>
+<ul>
+<li>web: frontend web server written in Go</li>
+<li>words: REST API written in Java, to query the DB</li>
+<li>db: PostgreSQL database containing the words to display</li>
+</ul>
+<p>Our goal is to containerize this application.</p>
+<p>There will be 3 steps:</p>
+<ol>
+<li>Write multiple Dockerfiles. to build container images.</li>
+<li>Write a Compose file, to run the app locally.</li>
+<li>Deploy on Kubernetes.</li>
+</ol>
+<h2 id="exercise-1-dockerfiles">Exercise 1: Dockerfiles</h2>
+<p>Our goal is to write Dockerfiles for the 3 containers.</p>
+<p>First, <code>git clone</code> this repository. We need to create one
+Dockerfile for each service. Pro tip: place each Dockerfile
+in the corresponding directory (web, words, db).</p>
+<p>The following paragraphs describe the installation instructions
+for each service.</p>
+<p>Note: in this first exercise, we only want to build the images
+and check that they start correctly (<code>web</code> and <code>words</code> should display
+a short message to indicate that they're running), but we're not
+trying to run the whole application or to connect to the services.
+This will come later.</p>
+<h3 id="web">web</h3>
+<p>This is a web server written in Go. To compile Go code, we can
+use the <code>golang</code> official image, or install Go packages in
+any of the official base images.</p>
+<p>The entire code is in a single
+source file (<code>dispatcher.go</code>), and should be compiled like this:</p>
+<pre class="hljs"><code><div>go build dispatcher.go
+</div></code></pre>
+<p>This creates an executable named <code>dispatcher</code>, which should be
+launched like this:</p>
+<pre class="hljs"><code><div>./dispatcher
+Listening on port 80
+</div></code></pre>
+<p>The web server needs to access the <code>static</code> directory. This directory
+must be a subdirectory of the current working directory when the
+server is started.</p>
+<p>Additional information:</p>
+<ul>
+<li>the server listens on port 80</li>
+<li>the Go compiler is only useful to build the server (not to run it)</li>
+</ul>
+<h3 id="words">words</h3>
+<p>This is a REST API backend written in Java. It should be built with maven.</p>
+<p>On a Debian or Ubuntu distribution, we can install Java and maven like this:</p>
+<pre class="hljs"><code><div>apt-get install maven openjdk-8-jdk
+</div></code></pre>
+<p>To build the program, we can invoke maven like this:</p>
+<pre class="hljs"><code><div>mvn verify
+</div></code></pre>
+<p>The result is a file named <code>words.jar</code>, located in the <code>target</code> directory.</p>
+<p>The server should be started by running the following command,
+in the directory where <code>words.jar</code> is located:</p>
+<pre class="hljs"><code><div>java -Xmx8m -Xms8m -jar words.jar
+</div></code></pre>
+<p>Additional information:</p>
+<ul>
+<li>the server listens on port 8080</li>
+<li>compilation requires packages <code>maven</code> and <code>openjdk-8-jdk</code></li>
+<li>execution requires package <code>openjdk-8-jdk</code> (<code>maven</code> is not necessary)</li>
+</ul>
+<h3 id="db">db</h3>
+<p>This is a PostgreSQL database.</p>
+<p>The database must be initialized with the schema (database and tables)
+and the data (used by the application).</p>
+<p>The file <code>words.sql</code> contains all the SQL commands necessary to create
+the schema and load the data.</p>
+<pre class="hljs"><code><div># cat words.sql
+CREATE TABLE nouns (word TEXT NOT NULL);
+CREATE TABLE verbs (word TEXT NOT NULL);
+CREATE TABLE adjectives (word TEXT NOT NULL);
+
+INSERT INTO nouns(word) VALUES
+  ('cloud'),
+  ('elephant'),
+  ('gø language'),
+  ('laptøp'),
+  ('cøntainer'),
+  ('micrø-service'),
+  ('turtle'),
+  ('whale'),
+  ('gøpher'),
+  ('møby døck'),
+  ('server'),
+  ('bicycle'),
+  ('viking'),
+  ('mermaid'),
+  ('fjørd'),
+  ('legø'),
+  ('flødebolle'),
+  ('smørrebrød');
+
+INSERT INTO verbs(word) VALUES
+  ('will drink'),
+  ('smashes'),
+  ('smøkes'),
+  ('eats'),
+  ('walks tøwards'),
+  ('løves'),
+  ('helps'),
+  ('pushes'),
+  ('debugs'),
+  ('invites'),
+  ('hides'),
+  ('will ship');
+
+INSERT INTO adjectives(word) VALUES
+  ('the exquisite'),
+  ('a pink'),
+  ('the røtten'),
+  ('a red'),
+  ('the serverless'),
+  ('a brøken'),
+  ('a shiny'),
+  ('the pretty'),
+  ('the impressive'),
+  ('an awesøme'),
+  ('the famøus'),
+  ('a gigantic'),
+  ('the gløriøus'),
+  ('the nørdic'),
+  ('the welcøming'),
+  ('the deliciøus');
+</div></code></pre>
+<p>Additional information:</p>
+<ul>
+<li>we strongly suggest using the official PostgreSQL image that can
+be found on the Docker Hub (it's called <code>postgres</code>)</li>
+<li>if we check the <a href="https://hub.docker.com/_/postgres">page of that official image</a> on the Docker Hub, we
+will find a lot of documentation; the section &quot;Initialization scripts&quot;
+is particularly useful to understand how to load <code>words.sql</code></li>
+<li>it is advised to set up password authentication for the database; but in this case, to make our lives easier, we will simply authorize all connections (by setting environment variable <code>POSTGRES_HOST_AUTH_METHOD=trust</code>)</li>
+</ul>
+<h2 id="exercise-2-compose-file">Exercise 2: Compose file</h2>
+<p>When the 3 images build correctly, we can move on and write the Compose
+file. We suggest placing the Compose file at the root of the repository.</p>
+<p>At this point, we want to make sure that services can communicate
+together, and that we can connect to <code>web</code>.</p>
+<p>Note: the <code>web</code> service should be exposed.</p>
+<h2 id="exercise-3-play-with-docker-compose">Exercise 3: Play With Docker Compose</h2>
+<ul>
+<li>create a volume that allows the modification the static website data</li>
+<li>verify that the database contains all the data</li>
+<li>expose the database also and connect externally</li>
+</ul>
+<h3 id="utils">Utils</h3>
+<p>We will need to use images hosted on a registry. For our convenience, the images are available on:</p>
+<ul>
+<li>jpetazzo/wordsmith-db:latest</li>
+<li>jpetazzo/wordsmith-words:latest</li>
+<li>jpetazzo/wordsmith-web:latest</li>
+</ul>
+<p>Useful reminders for this exercise:</p>
+<ul>
+<li>service <code>web</code> is listening on port 80, and we want it to be reachable
+from outside the cluster</li>
+<li>service <code>words</code> is listening on port 8080</li>
+<li>service <code>db</code> is listening on port 5432</li>
+</ul>
+
+</body>
+</html>

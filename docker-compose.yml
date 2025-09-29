@@ -1,0 +1,51 @@
+# services:
+#   # PostgreSQL database
+#   db:
+#     build: ./db
+#     container_name: db
+#     environment:
+#       POSTGRES_DB: words
+#       POSTGRES_HOST_AUTH_METHOD: trust
+#     ports:
+#       - "5432:5432"           # database stays on 5432
+
+#   # Go web site
+#   web:
+#     build: ./web
+#     container_name: web
+#     depends_on:
+#       - db
+#     ports:
+#       - "80:80"               # Go app listens on 80 inside the container
+#     environment:
+#       DB_HOST: db
+#       DB_PORT: 5432           # still talk to Postgres on 5432
+#       DB_NAME: words
+#       DB_USER: postgres
+#       DB_PASSWORD: ""
+
+#   # Java words service (adjust external port if it serves HTTP)
+#   words:
+#     build: ./words
+#     container_name: words
+#     depends_on:
+#       - db
+#     environment:
+#       DB_HOST: db
+#       DB_PORT: 5432
+#       DB_NAME: words
+#       DB_USER: postgres
+#       DB_PASSWORD: ""
+  services:
+    db:
+      build: ./db
+
+    words:
+      build: ./words
+      ports:
+        - 8080:8080
+
+    web:
+      build: ./web
+      ports:
+        - 80:80
